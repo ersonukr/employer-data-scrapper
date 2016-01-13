@@ -1,0 +1,29 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Listing Webfiles</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Phone number</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @webfiles.each do |webfile| %>
+      <tr>
+        <td><%= webfile.name %></td>
+        <td><%= webfile.phone_number %></td>
+        <!-- <td><%= link_to 'Show', webfile %></td>
+        <td><%= link_to 'Edit', edit_webfile_path(webfile) %></td>
+        <td><%= link_to 'Destroy', webfile, method: :delete, data: { confirm: 'Are you sure?' } %></td> -->
+      </tr>
+    <% end %>
+  </tbody><hr>
+</table>
+
+<br>
+
+<%= link_to 'New Webfile', new_webfile_path %>

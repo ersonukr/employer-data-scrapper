@@ -1,0 +1,8 @@
+development:
+  adapter: mysql2
+  database: webscrap_development
+  pool: 20
+  encoding: utf8
+  username: root
+  password: unnati123
+  host:  localhost
