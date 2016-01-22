@@ -5,8 +5,11 @@
 <table>
   <thead>
     <tr>
+      <th>Categories</th>
       <th>Name</th>
       <th>Phone number</th>
+      <th>Address</th>
+      <th>Area</th>
       <th colspan="3"></th>
     </tr>
   </thead>
@@ -14,8 +17,11 @@
   <tbody>
     <% @webfiles.each do |webfile| %>
       <tr>
+        <td><%= webfile.category %></td>
         <td><%= webfile.name %></td>
         <td><%= webfile.phone_number %></td>
+        <td><%= webfile.address %></td>
+        <td><%= webfile.area %></td>
         <!-- <td><%= link_to 'Show', webfile %></td>
         <td><%= link_to 'Edit', edit_webfile_path(webfile) %></td>
         <td><%= link_to 'Destroy', webfile, method: :delete, data: { confirm: 'Are you sure?' } %></td> -->
@@ -27,3 +33,4 @@
 <br>
 
 <%= link_to 'New Webfile', new_webfile_path %>
+<%= link_to "Export Data", phone_export_path(format: "csv") %>

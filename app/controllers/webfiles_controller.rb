@@ -61,6 +61,15 @@ class WebfilesController < ApplicationController
     end
   end
 
+
+  def export
+    @data = Webfile.order(:created_at)
+    respond_to do |format|
+      format.html { redirect_to root_url }
+      format.csv { send_data @data.to_csv }
+    end
+  end
+
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_webfile
@@ -69,6 +78,6 @@ class WebfilesController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def webfile_params
-      params.require(:webfile).permit(:name, :phone_number)
+      params.require(:webfile).permit(:name, :phone_number, :category, :address, :area)
     end
 end
