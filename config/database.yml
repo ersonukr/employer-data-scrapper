@@ -4,5 +4,5 @@ development:
   pool: 20
   encoding: utf8
   username: root
-  password: unnati123
+  password: 
   host:  localhost
